@@ -2,4 +2,15 @@
  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
- 
+ {% if recipes %}
+    <ul>
+    {% for recipe in recipes %}
+        <li>
+            <a target="_blank" href="https://www.matprat.no/{{ recipe.url }}/">{{ recipe.title }}</a>
+            <p>{{ recipe.description }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No recipes are available.</p>
+{% endif %}
