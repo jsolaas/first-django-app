@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from ukemenyscraper.scraper import simple_get
-from bs4 import BeautifulSoup  
+from bs4 import BeautifulSoup 
+from datetime import * 
 
 # Create your views here.
 #def uke_meny(request):
