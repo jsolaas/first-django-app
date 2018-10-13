@@ -1,16 +1,33 @@
- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+{% load static %}
 
- {% if recipes %}
-    <ul>
-    {% for recipe in recipes %}
-        <li>
-            <a target="_blank" href="https://www.matprat.no/{{ recipe.url }}/">{{ recipe.title }}</a>
-            <p>{{ recipe.description }}</p>
-        </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No recipes are available.</p>
-{% endif %}
+<html>
+
+  <head>
+    <title>diny - food for everybody</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="{% static 'css/ukemenyscraper.css' %}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div>
+      <h1><a href="/">diny - food for everybody</a></h1>
+    </div>
+
+    
+      {% if recipes %}
+        <ul>
+        {% for recipe in recipes %}
+            <li>
+                <a target="_blank" href="https://www.matprat.no/{{ recipe.url }}/">{{ recipe.title }}</a>
+                <p>{{ recipe.description }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+      {% else %}
+        <p>No recipes are available.</p>
+      {% endif %}
+   
+
+  </body>
+</html>

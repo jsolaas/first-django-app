@@ -38,7 +38,7 @@ def ukensmatprat(request):
     recipe.description = description.get_text()
     recipes.append(recipe)
 
-  print(recipes)
+  #print(recipes)
 
   template = loader.get_template('ukemenyscraper/uke_meny.html')
 
