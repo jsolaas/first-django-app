@@ -4,7 +4,7 @@ from django.template import loader
 
 from ukemenyscraper.scraper import simple_get
 from bs4 import BeautifulSoup 
-from datetime import * 
+import datetime
 
 class Recipe:
   title = None
@@ -16,7 +16,9 @@ class Recipe:
 #def uke_meny(request):
     #return render(request, 'ukemenyscraper/uke_meny.html', {})
 def ukensmatprat(request):
-  raw_html = simple_get("https://www.matprat.no/artikler/middagstips/ukemeny-uke-412018/")
+  td = datetime.date.today()
+  wk = td.isocalendar()[1]
+  raw_html = simple_get("https://www.matprat.no/artikler/middagstips/ukemeny-uke-%s2018/" % wk)
   html = BeautifulSoup(raw_html, 'html.parser')
   table = html.find("div", {"class":"rich-text"}).findAll('p')
 
