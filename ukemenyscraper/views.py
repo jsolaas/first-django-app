@@ -12,9 +12,7 @@ class Recipe:
   description = None
 
 
-# Create your views here.
-#def uke_meny(request):
-    #return render(request, 'ukemenyscraper/uke_meny.html', {})
+
 def ukensmatprat(request):
   td = datetime.date.today()
   wk = td.isocalendar()[1]
